@@ -12,3 +12,8 @@ CREATE TABLE Crime (
   Gender VARCHAR,
   Age INT
 );
+
+select covid.covid19_cases, crime.offense, crime.zip_code
+from crime
+full outer join covid on 
+covid.zip_code=crime.zip_code;
