@@ -4,6 +4,6 @@ We set out to show the relationship between COVID data and Crime Rates in the Ka
 
 We found our original datasets on OpenDataKC. They are both the most current datasets, only showing information from 2020. Once we pulled the data, we cleaned it using Python Pandas, and then loaded the datasets into PgAdmin using SQL. 
 
-OpenDataKC: https://data.kcmo.org
-COVID Data Set: https://data.kcmo.org/Health/COVID-19-Data-by-ZIP-Code/98fz-2jyt
-Crime Data Set: https://data.kcmo.org/Crime/KCPD-Crime-Data-2020/vsgj-uufz
+OpenDataKC: https://data.kcmo.org<br>
+COVID Data Set: https://data.kcmo.org/Health/COVID-19-Data-by-ZIP-Code/98fz-2jyt<br>
+Crime Data Set: https://data.kcmo.org/Crime/KCPD-Crime-Data-2020/vsgj-uufz<br>
