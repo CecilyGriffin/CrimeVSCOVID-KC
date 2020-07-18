@@ -2,7 +2,7 @@ CREATE TABLE COVID (
   id INT PRIMARY KEY,
   Zip_Code VARCHAR,
   COVID19_Cases VARCHAR,
-  Crude_Rate_Per_Hundred_Thousand
+  Crude_Rate_Per_Hundred_Thousand VARCHAR
 );
 
 CREATE TABLE Crime (
