@@ -11,7 +11,6 @@ app = Flask(__name__, template_folder=".")
 # you can set key as config
 app.config['GOOGLEMAPS_KEY'] = gkey
 
-
 # you can also pass the key here if you prefer
 GoogleMaps(app, key=gkey)
 
@@ -24,7 +23,6 @@ def mapview():
         lng=-122.1419,
         markers=[(37.4419, -122.1419)]
     )
-    print(mymap.html)
     sndmap = Map(
         identifier="sndmap",
         lat=37.4419,
@@ -44,7 +42,6 @@ def mapview():
           }
         ]
     )
-    print(sndmap.html)
     return render_template('example.html', mymap=mymap, sndmap=sndmap)
 
 if __name__ == '__main__':
