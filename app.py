@@ -14,7 +14,12 @@ app.config['GOOGLEMAPS_KEY'] = gkey
 # you can also pass the key here if you prefer
 GoogleMaps(app, key=gkey)
 
+
 @app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/map")
 def mapview():
     # creating a map in the view
     mymap = Map(
