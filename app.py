@@ -27,6 +27,10 @@ def comparison():
 def home():
     return render_template("index.html")
 
+@app.route("/crimedescriptions.html")
+def wordcloud():
+    return render_template("crimedescriptions.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
 
