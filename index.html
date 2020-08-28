@@ -1,34 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Basketball!</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
 
-<body>
-  <div class="container text-center">
-    <h1 class="jumbotron">Crime VS COVID-19 KC</h1>
-    <div>
-      <ul style="list-style: none;">
-        {% for team in teams %}
-          <li>{{ team.player }}: {{ team.position }}</li>
-        {% endfor %}
+  <meta charset="UTF-8">
+  <title>Crime and COVID Dashboard</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body style="background-color: whitesmoke; overflow-x: hidden;">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand btn btn-lg" href="#" style="color: white; background-color: rgb(176, 67, 16); padding-top: 15px; padding-bottom: 15px; border-radius: 0px;">Kansas City, MO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualizations
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="static/Crime Heatmap.png">Crime Heatmap</a>
+            <a class="dropdown-item" href="static/zipvscovid.png">COVID in KCMO</a>
+            <a class="dropdown-item" href="static/COVID2.png">COVID Heatmap</a>
+            <a class="dropdown-item" href="Resources/wind_speed.html">Word Cloud</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comparison.html">Comparison</a>
+        </li>
       </ul>
     </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 text-center">
+      <div class="container" style="margin-top: 55px; background: white; padding: 10px;">
+        <h1 style="color: rgb(176, 67, 16)">Crime in Kansas City<hr/></h1>
+        <a target="_blank" href="static/Crime Heatmap.png">
+            <img src="static/Crime Heatmap.png" alt="Crime in Kansas City, MO" class="img-fluid">
+      </div>
+    </div>
+  
+      <div class="col-sm-12 col-md-6 text-center">
+        <div class="container" style="margin-top: 55px; background: white; padding: 10px;">
+          <h1 style="color: rgb(176, 67, 16); text-align: center;">COVID in Kansas City, MO<hr/></h1>
+           <a target="_blank" href="static/COVID Heatmap.png">
+              <img src="static/COVID2.png" alt="COVID in Kansas City, MO" class="img-fluid">
+          </a>
+          </div>
+        </div>
+      </div>
   </div>
-
-
-  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-  <script src="http://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
-    <div id="map" style="width: 1200px; height: 800px"></div>
-  <script type="text/javascript"charset="utf-8"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script type="text/javascript" src="crime-heatmap.js"></script></script>
-
-</body>
-
-</html>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 text-center">
+      <div class="container" style="margin-top: 10px; background: white;">
+        </a><hr/>
+        <p>We set out to show the relationship between COVID data and Crime Rates in the Kansas City area to show the zip codes that are most impacted by the two crisis. It was important to us to focus on something local and relevant to our lives right now. Kansas City is facing both a health crisis with COVID-19 and a violence crisis as we're seeing the White House begin "Operation: Legend" to help with violence in our community.</p>
+        <p>We found our original datasets on OpenDataKC. They are both the most current datasets, only showing information from 2020. Once we pulled the data, we cleaned it using Python Pandas, and then loaded the datasets into PgAdmin, a relational database using SQL. The result was a DataFrame for COVID-19 Data and a separate DataFrame for Crime Data.
+      </p>
+      </div>
+    </div>
