@@ -1,0 +1,13 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.bar {
+  fill: rgb(92, 84, 199);
+}
+
+.bar:hover {
+  fill: rgb(235, 56, 56);
+}
