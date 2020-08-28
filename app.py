@@ -19,6 +19,10 @@ GoogleMaps(app, key=gkey)
 def home():
     return render_template("index.html")
 
+@app.route("/comparison.html")
+def comparison():
+    return render_template("comparison.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
