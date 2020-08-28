@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <title>Crime and COVID Dashboard</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body style="background-color: whitesmoke; overflow-x: hidden;">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -25,50 +25,51 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Plots
+            Visualizations
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="Resources/max_temp_html.html">Max Temperature</a>
-            <a class="dropdown-item" href="static/zipvscovid.png">COVID in Kansas City, MO</a>
-            <a class="dropdown-item" href="Resources/cloudiness.html">Cloudiness</a>
-            <a class="dropdown-item" href="Resources/wind_speed.html">Wind Speed</a>
+            <a class="dropdown-item" href="static/Crime Heatmap.png">Crime Heatmap</a>
+            <a class="dropdown-item" href="static/zipvscovid.png">COVID in KCMO</a>
+            <a class="dropdown-item" href="static/COVID Heatmap.png">COVID Heatmap</a>
+            <a class="dropdown-item" href="Resources/wind_speed.html">Word Cloud</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="Resources/comparisons.html">Comparison</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Resources/data.html">Data</a>
         </li>
       </ul>
     </div>
   </nav>
 
   <div class="row">
-    <div class="col-sm-12 col-md-7 text-center">
+    <div class="col-sm-12 col-md-6 text-center">
       <div class="container" style="margin-top: 55px; background: white; padding: 10px;">
         <h1 style="color: rgb(176, 67, 16)">Crime in Kansas City<hr/></h1>
         <a target="_blank" href="static/Crime Heatmap.png">
             <img src="static/Crime Heatmap.png" alt="Crime in Kansas City, MO" class="img-fluid">
-        </a>
-        <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cites.</p>
-        <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs. latitude. Factors we looked at included:
-          temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis,
-          as well as explanations and descriptions of any trends and correlations witnessed.
-      </p>
-
+        <!-- </a><hr/>
+        <p>We set out to show the relationship between COVID data and Crime Rates in the Kansas City area to show the zip codes that are most impacted by the two crisis. It was important to us to focus on something local and relevant to our lives right now. Kansas City is facing both a health crisis with COVID-19 and a violence crisis as we're seeing the White House begin "Operation: Legend" to help with violence in our community.</p>
+        <p>We found our original datasets on OpenDataKC. They are both the most current datasets, only showing information from 2020. Once we pulled the data, we cleaned it using Python Pandas, and then loaded the datasets into PgAdmin, a relational database using SQL. The result was a DataFrame for COVID-19 Data and a separate DataFrame for Crime Data.A
+      </p> -->
       </div>
     </div>
   
-      <div class="col-sm-12 col-md-5 text-center">
+      <div class="col-sm-12 col-md-6 text-center">
         <div class="container" style="margin-top: 55px; background: white; padding: 10px;">
-          <h1 style="color: rgb(176, 67, 16); text-align: center;">Visualizations<hr/></h1>
-         
-              <a href="static/zipvscovid.png"><img src="static/zipvscovid.png" alt="COVID in Kansas City, MO"height=150px width=250px></a>
-              <!-- <a href="Resources/humidity.html"><img src="assets/images/Fig2.png" alt="Latitude vs. Humidity"height=150px width=250px></a>
-              <a href="Resources/cloudiness.html"><img src="assets/images/Fig3.png" alt="Latitude vs. Cloudiness"height=150px width=250px></a>
-              <a href="Resources/wind_speed.html"><img src="assets/images/Fig4.png" alt="Latitude vs. Wind"height=150px width=250px></a> -->
+          <h1 style="color: rgb(176, 67, 16); text-align: center;">COVID in Kansas City, MO<hr/></h1>
+           <a target="_blank" href="static/COVID Heatmap.png">
+              <img src="static/COVID2.png" alt="COVID in Kansas City, MO" class="img-fluid">
+          </a>
           </div>
         </div>
       </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12 text-center">
+      <div class="container" style="margin-top: 10px; background: white;">
+        </a><hr/>
+        <p>We set out to show the relationship between COVID data and Crime Rates in the Kansas City area to show the zip codes that are most impacted by the two crisis. It was important to us to focus on something local and relevant to our lives right now. Kansas City is facing both a health crisis with COVID-19 and a violence crisis as we're seeing the White House begin "Operation: Legend" to help with violence in our community.</p>
+        <p>We found our original datasets on OpenDataKC. They are both the most current datasets, only showing information from 2020. Once we pulled the data, we cleaned it using Python Pandas, and then loaded the datasets into PgAdmin, a relational database using SQL. The result was a DataFrame for COVID-19 Data and a separate DataFrame for Crime Data.
+      </p>
+      </div>
+    </div>
