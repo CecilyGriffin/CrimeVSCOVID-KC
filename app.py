@@ -34,7 +34,3 @@ def wordcloud():
 if __name__ == '__main__':
     app.run(debug=True)
 
-#TODO:
-# app route 
-# index.html goes in templates folder w any consecutive HTML files 
-# create app route 
