@@ -16,13 +16,16 @@ GoogleMaps(app, key=gkey)
 
 
 @app.route("/")
-def home():
+def main():
     return render_template("index.html")
 
 @app.route("/comparison.html")
 def comparison():
     return render_template("comparison.html")
 
+@app.route("/index.html")
+def home():
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
