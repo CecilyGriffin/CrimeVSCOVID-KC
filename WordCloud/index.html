@@ -2,14 +2,6 @@
 <html>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="d3.layout.cloud.js"></script>
-<script>
-    d3.csv("NewCrime.csv", function(data) {
-        for (var i = 0; i < data.length; i++) {
-            console.log(data[i].offense);
-        
-        }
-    });
-    </script>
 <head>
     <title>Word Cloud Example</title>
 </head>
@@ -19,7 +11,7 @@
     }
     .legend {
         border: 1px solid #555555;
-        border-radius: 5px 5px 5px 5px;
+        border-radius: 8px 8px 8px 8px;
         font-size: 0.8em;
         margin: 10px;
         padding: 8px;
@@ -29,13 +21,13 @@
     }
 </style>
 <body>
-    
+
 </body>
 <script>
 
+    var frequency_list = [{"text":"Disorderly Conduct","size":40},{"text":"Theft From Building","size":15},{"text":"All Other Larceny","size":10},{"text":"Forcible Rape","size":15},{"text":"Identity Theft","size":10},{"text":"Simple Assault","size":5},{"text":"Forcible Sodomy","size":10},{"text":"Embezzlement","size":5},{"text":"Theft From Motor Vehicle","size":5},{"text":"Motor Vehicle Theft","size":85},{"text":"Aggravated Assault","size":5},{"text":"Burglary/Breaking and Entering","size":5},{"text":"Shoplifting","size":15},{"text":"All Other Offenses","size":45},{"text":"Vandalism/Destruction of Property","size":30},{"text":"Trespass of Real Property","size":5},{"text":"Theft of Vehicle Parts and Accessories","size":5},{"text":"Pocket-Picking","size":10},{"text":"Robbery","size":120},{"text":"Intimidation","size":5},{"text":"Arson","size":90},{"text":"Murder","size":5},{"text":"Counterfeiting / Forgery","size":10},{"text":"Family Offenses, Nonviolent","size":10},{"text":"Credit Card / Automatic Teller","size":70},{"text":"Stolen Property Offenses","size":30},{"text":"False Pretenses / Swindl","size":5},{"text":"Animal Cruelty","size":45},{"text":"Animal Cruelty","size":40},{"text":"Purchasing Prostitution","size":30},{"text":"Wire Fraud","size":25},{"text":"Driving Under the Influence","size":40},{"text":"Prostitution","size":10},{"text":"Weapon Law Violations","size":5},{"text":"Drug Equipment Violations","size":15},{"text":"Liquor Law Violations","size":15},{"text":"Statutory Rape","size":15},{"text":"Justifiable Homicide","size":15},{"text":"Forcible Fondling","size":15},{"text":"Sexual Assault With An Object","size":15},{"text":"Drunkenness","size":20},{"text":"Pornography / Obscene Material","size":15},{"tex":"Hacking / Computer Invasion","size":15},{"text":"Impersonation","size":15},{"text":"Involuntary Servitude","size":15},{"text":"Extortion / Blackmail","size":15},{"text":"Welfare Fraud","size":15},{"text":"Purse-Snatching","size":25},{"text":"Kidnapping / Abduction","size":5},{"text":"Curfew / Loitering / Vargancy Violation","size":5},{"text":"Theft From Coin-Operated Machin","size":5},{"text":"Commercial Sex Acts","size":10},{"text":"Bad Checks","size":10},{"text":"DV Related Suicide","size":10},{"text":"Betting / Wagering","size":5},{"text":"Assisting or Promoting Prostitution","size":10},{"text":"Incest","size":5}];
     
-
-    var frequency_list = [{"text":"study","size":40},{"text":"motion","size":15},{"text":"forces","size":10},{"text":"electricity","size":15},{"text":"movement","size":10},{"text":"relation","size":5},{"text":"things","size":10},{"text":"force","size":5},{"text":"ad","size":5},{"text":"energy","size":85},{"text":"living","size":5},{"text":"nonliving","size":5},{"text":"laws","size":15},{"text":"speed","size":45},{"text":"velocity","size":30},{"text":"define","size":5},{"text":"constraints","size":5},{"text":"universe","size":10},{"text":"physics","size":120},{"text":"describing","size":5},{"text":"matter","size":90},{"text":"physics-the","size":5},{"text":"world","size":10},{"text":"works","size":10},{"text":"science","size":70},{"text":"interactions","size":30},{"text":"studies","size":5},{"text":"properties","size":45},{"text":"nature","size":40},{"text":"branch","size":30},{"text":"concerned","size":25},{"text":"source","size":40},{"text":"google","size":10},{"text":"defintions","size":5},{"text":"two","size":15},{"text":"grouped","size":15},{"text":"traditional","size":15},{"text":"fields","size":15},{"text":"acoustics","size":15},{"text":"optics","size":15},{"text":"mechanics","size":20},{"text":"thermodynamics","size":15},{"text":"electromagnetism","size":15},{"text":"modern","size":15},{"text":"extensions","size":15},{"text":"thefreedictionary","size":15},{"text":"interaction","size":15},{"text":"org","size":25},{"text":"answers","size":5},{"text":"natural","size":15},{"text":"objects","size":5},{"text":"treats","size":10},{"text":"acting","size":5},{"text":"department","size":5},{"text":"gravitation","size":5},{"text":"heat","size":10},{"text":"light","size":10},{"text":"magnetism","size":10},{"text":"modify","size":5},{"text":"general","size":10},{"text":"bodies","size":5},{"text":"philosophy","size":5},{"text":"brainyquote","size":5},{"text":"words","size":5},{"text":"ph","size":5},{"text":"html","size":5},{"text":"lrl","size":5},{"text":"zgzmeylfwuy","size":5},{"text":"subject","size":5},{"text":"distinguished","size":5},{"text":"chemistry","size":5},{"text":"biology","size":5},{"text":"includes","size":5},{"text":"radiation","size":5},{"text":"sound","size":5},{"text":"structure","size":5},{"text":"atoms","size":5},{"text":"including","size":10},{"text":"atomic","size":10},{"text":"nuclear","size":10},{"text":"cryogenics","size":10},{"text":"solid-state","size":10},{"text":"particle","size":10},{"text":"plasma","size":10},{"text":"deals","size":5},{"text":"merriam-webster","size":5},{"text":"dictionary","size":10},{"text":"analysis","size":5},{"text":"conducted","size":5},{"text":"order","size":5},{"text":"understand","size":5},{"text":"behaves","size":5},{"text":"en","size":5},{"text":"wikipedia","size":5},{"text":"wiki","size":5},{"text":"physics-","size":5},{"text":"physical","size":5},{"text":"behaviour","size":5},{"text":"collinsdictionary","size":5},{"text":"english","size":5},{"text":"time","size":35},{"text":"distance","size":35},{"text":"wheels","size":5},{"text":"revelations","size":5},{"text":"minute","size":5},{"text":"acceleration","size":20},{"text":"torque","size":5},{"text":"wheel","size":5},{"text":"rotations","size":5},{"text":"resistance","size":5},{"text":"momentum","size":5},{"text":"measure","size":10},{"text":"direction","size":10},{"text":"car","size":5},{"text":"add","size":5},{"text":"traveled","size":5},{"text":"weight","size":5},{"text":"electrical","size":5},{"text":"power","size":5}];
+    
 
 
     var color = d3.scale.linear()
