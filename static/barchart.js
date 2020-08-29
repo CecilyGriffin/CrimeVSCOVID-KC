@@ -45,13 +45,13 @@ var svg = d3.select("body")
   // Create a linear scale for the vertical axis.
   // d3.max it is like a map take a data out of the function and use like arry
   var yLinearScale = d3.scaleLinear()
-  .domain([0, d3.max(crimeData, d => d.age)])
+  .domain([18, d3.max(crimeData, d => d.age)])
   .range([chartHeight, 0]);
 
   // Create two new functions passing our scales in as arguments
   // These will be used to create the chart's axes
   var bottomAxis = d3.axisBottom(xBandScale);
-  var leftAxis = d3.axisLeft(yLinearScale).ticks(30);
+  var leftAxis = d3.axisLeft(yLinearScale).ticks(10);
 
   // Append two SVG group elements to the chartGroup area,
   // and create the bottom and left axes inside of them
